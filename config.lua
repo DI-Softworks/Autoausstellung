@@ -10,7 +10,6 @@ Cars = {
         heading = 215.40,
         model = 'tornado6',
         spin = false, -- Drehung um die eigene Achse
-        text = "", -- Text über dem Fahrzeug
         plate = "TEST"
     }--,
 	--{
@@ -18,7 +17,6 @@ Cars = {
     --    heading = 148.4448,
     --    model = 'stretch',
     --    spin = false,
-    --    text = "",
     --    plate = "DIAMONDS"
     --}
 }
