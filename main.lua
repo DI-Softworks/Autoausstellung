@@ -32,37 +32,37 @@ function SpawnLocalCar(i)
     Citizen.CreateThread(function()
         local hash = GetHashKey(Cars[i].model)
         RequestModel(hash)
-        local attempt = 0
+        local tryAgainBitch = 0
         while not HasModelLoaded(hash) do
-            attempt = attempt + 1
+            tryAgainBitch = tryAgainBitch + 1
             if attempt > 2000 then return end
             Wait(0)
         end
-        local veh = CreateVehicle(hash, Cars[i].pos.x, Cars[i].pos.y, Cars[i].pos.z-1,Cars[i].heading, false, false)
+        local vehicleeee = CreateVehicle(hash, Cars[i].pos.x, Cars[i].pos.y, Cars[i].pos.z-1,Cars[i].heading, false, false)
         SetModelAsNoLongerNeeded(hash)
-        SetVehicleEngineOn(veh, false)
-        SetVehicleBrakeLights(veh, false)
-        SetVehicleLights(veh, 0)
-        SetVehicleLightsMode(veh, 0)
-        SetVehicleInteriorlight(veh, false)
-        SetVehicleOnGroundProperly(veh)
-        FreezeEntityPosition(veh, true)
-        SetVehicleCanBreak(veh, true)
-        SetVehicleFullbeam(veh, false)
+        SetVehicleEngineOn(vehicleeee, false)
+        SetVehicleBrakeLights(vehicleeee, false)
+        SetVehicleLights(vehicleeee, 0)
+        SetVehicleLightsMode(vehicleeee, 0)
+        SetVehicleInteriorlight(vehicleeee, false)
+        SetVehicleOnGroundProperly(vehicleeee)
+        FreezeEntityPosition(vehicleeee, true)
+        SetVehicleCanBreak(vehicleeee, true)
+        SetVehicleFullbeam(vehicleeee, false)
         if carInvincible then
-        SetVehicleReceivesRampDamage(veh, true)
-        RemoveDecalsFromVehicle(veh)
-        SetVehicleCanBeVisiblyDamaged(veh, true)
-        SetVehicleLightsCanBeVisiblyDamaged(veh, true)
-        SetVehicleWheelsCanBreakOffWhenBlowUp(veh, false)  
-        SetDisableVehicleWindowCollisions(veh, true)    
-        SetEntityInvincible(veh, true)
+        SetVehicleReceivesRampDamage(vehicleeee, true)
+        RemoveDecalsFromVehicle(vehicleeee)
+        SetVehicleCanBeVisiblyDamaged(vehicleeee, true)
+        SetVehicleLightsCanBeVisiblyDamaged(vehicleeee, true)
+        SetVehicleWheelsCanBreakOffWhenBlowUp(vehicleeee, false)  
+        SetDisableVehicleWindowCollisions(vehicleeee, true)    
+        SetEntityInvincible(vehicleeee, true)
         end
         if DoorLock then 
-            SetVehicleDoorsLocked(veh, 2)
+            SetVehicleDoorsLocked(vehicleeee, 2)
         end
-        SetVehicleNumberPlateText(veh, Cars[i].plate)
-        Cars[i].spawned = veh
+        SetVehicleNumberPlateText(vehicleeee, Cars[i].plate)
+        Cars[i].spawned = vehicleeee
     end)
 end
 
