@@ -35,7 +35,7 @@ function SpawnLocalCar(i)
         local tryAgainBitch = 0
         while not HasModelLoaded(hash) do
             tryAgainBitch = tryAgainBitch + 1
-            if attempt > 2000 then return end
+            if tryAgainBitch > 2000 then return end
             Wait(0)
         end
         local vehicleeee = CreateVehicle(hash, Cars[i].pos.x, Cars[i].pos.y, Cars[i].pos.z-1,Cars[i].heading, false, false)
